@@ -1,0 +1,44 @@
+body{
+font-family: Arial;
+background:#f4f6ff;
+text-align:center;
+}
+
+h1{
+color:#333;
+}
+
+table{
+margin:auto;
+border-collapse:collapse;
+width:90%;
+background:white;
+}
+
+th,td{
+padding:10px;
+border:1px solid #ddd;
+}
+
+th{
+background:#AF4CAA;
+color:white;
+}
+
+button{
+padding:8px 15px;
+border:none;
+background:#AF4C9A;
+color:white;
+cursor:pointer;
+border-radius:5px;
+}
+
+button:hover{
+background:#B74C9E;
+}
+
+.tambah{
+margin:20px;
+background:blue;
+}
