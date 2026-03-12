@@ -1,47 +1,97 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-
-<title>Tambah Guru</title>
-<link rel="stylesheet" href="style.css">
-
-<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tambah Data Guru</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<h1>Tambah Data Guru</h1>
+  <div class="container">
+    <h1>Form Tambah Data Guru</h1>
 
-<form id="formGuru">
+    <form id="formTambah">
 
-<input type="text" id="nip" placeholder="NIP"><br><br>
+      <label>NIP</label>
+      <input type="text" id="nip">
 
-<input type="text" id="nama" placeholder="Nama"><br><br>
+      <label>Nama</label>
+      <input type="text" id="nama">
 
-<select id="jk">
-<option>Laki-laki</option>
-<option>Perempuan</option>
-</select><br><br>
+      <label>Jenis Kelamin</label>
+      <select type="text" id="jeniskelamin">
+      <option value="pilih jenis kelamin">pilih jenis kelamin</option>
+      <option value="laki-laki">laki-laki</option>
+      <option value="perempuan">perempuan</option>
+     </select>
+  
+</select>
+      <label>Tanggal Lahir</label>
+      <input type="text" id="tgllahir">
 
-<input type="date" id="tgl"><br><br>
+      <label>Mapel</label>
+      <input type="text" id="mapel">
 
-<input type="text" id="mapel" placeholder="Mapel"><br><br>
+      <label>Alamat</label>
+      <input type="text" id="alamat">
 
-<input type="text" id="alamat" placeholder="Alamat"><br><br>
+      <label>No Telepon</label>
+      <input type="text" id="notlpn">
 
-<input type="text" id="notlp" placeholder="No Telp"><br><br>
+      <label>Email</label>
+      <input type="text" id="email">
 
-<input type="email" id="email" placeholder="Email"><br><br>
+      <label>Pendidikan Terakhir</label>
+      <input type="text" id="pendidikan_terakhir">
 
-<input type="text" id="pendidikan" placeholder="Pendidikan"><br><br>
+      <button type="submit">Simpan</button>
 
-<button type="submit">Simpan</button>
+    </form>
 
-</form>
+    <br>
+    <a href="daftar.html">Data Guru</a>
 
-<script src="script.js"></script>
+  </div>
+
+  <script type="module">
+
+    import { tambahdataguru } from './main.js'
+
+    const formTambah = document.getElementById('formTambah')
+
+    formTambah.addEventListener('submit', function (e) {
+      e.preventDefault()
+
+      const nip = document.getElementById('nip').value
+      const nama = document.getElementById('nama').value
+      const jeniskelamin = document.getElementById('jeniskelamin').value
+      const tgllahir = document.getElementById('tgllahir').value
+      const mapel = document.getElementById('mapel').value
+      const alamat = document.getElementById('alamat').value
+      const notlpn = document.getElementById('notlpn').value
+      const email = document.getElementById('email').value
+      const pendidikan_terakhir = document.getElementById('pendidikan_terakhir').value
+
+      tambahdataguru(
+        nip,
+        nama,
+        jeniskelamin,
+        tgllahir,
+        mapel,
+        alamat,
+        notlpn,
+        email,
+        pendidikan_terakhir
+      )
+
+      formTambah.reset()
+    })
+
+  </script>
 
 </body>
+
 </html>

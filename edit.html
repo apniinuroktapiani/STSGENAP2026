@@ -1,47 +1,102 @@
 <!DOCTYPE html>
 <html>
-<head>
 
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Edit Data Guru</title>
 <link rel="stylesheet" href="style.css">
-
-<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
-
 </head>
 
 <body>
 
-<h1>Edit Data Guru</h1>
+<div class="container">
 
-<form id="editGuru">
+<h1>Form Edit Data Guru</h1>
 
-<input type="text" id="nip"><br><br>
+<form id="formubah">
 
-<input type="text" id="nama"><br><br>
+<label>NIP</label>
+<input type="text" id="nip" required>
 
-<select id="jk">
-<option>Laki-laki</option>
-<option>Perempuan</option>
-</select><br><br>
+<label>Nama</label>
+<input type="text" id="nama" required>
 
-<input type="date" id="tgl"><br><br>
+<label>Jenis Kelamin</label>
+<select id="jeniskelamin" required>
+<option value="">Pilih Jenis Kelamin</option>
+<option value="L">Laki-laki</option>
+<option value="P">Perempuan</option>
+</select>
 
-<input type="text" id="mapel"><br><br>
+<label>Tanggal Lahir</label>
+<input type="date" id="tgllahir" required>
 
-<input type="text" id="alamat"><br><br>
+<label>Mapel</label>
+<input type="text" id="mapel" required>
 
-<input type="text" id="notlp"><br><br>
+<label>Alamat</label>
+<input type="text" id="alamat" required>
 
-<input type="email" id="email"><br><br>
+<label>No Telepon</label>
+<input type="text" id="notlpn" required>
 
-<input type="text" id="pendidikan"><br><br>
+<label>Email</label>
+<input type="email" id="email" required>
 
-<button type="submit">Update</button>
+<label>Pendidikan Terakhir</label>
+<input type="text" id="pendidikan_terakhir" required>
+
+<button type="submit">Simpan</button>
+
+<br><br>
+<a href="daftar.html">Kembali ke Daftar Guru</a>
 
 </form>
 
-<script src="script.js"></script>
+</div>
+
+
+<script type="module">
+
+import { ambilDataGuru, ubahdataguru } from './main.js'
+
+// ambil id dari URL
+const urlparams = new URLSearchParams(window.location.search)
+const iddataguru = urlparams.get('id')
+
+// ambil data guru
+const dataguru = await ambilDataGuru(iddataguru)
+
+// cek jika data tidak ada
+if (!dataguru) {
+alert("Data guru tidak ditemukan")
+window.location.href = "daftar.html"
+}
+
+// isi form dengan data lama
+document.getElementById("nip").value = dataguru.nip
+document.getElementById("nama").value = dataguru.nama
+document.getElementById("jeniskelamin").value = dataguru.jeniskelamin
+document.getElementById("tgllahir").value = dataguru.tgllahir
+document.getElementById("mapel").value = dataguru.mapel
+document.getElementById("alamat").value = dataguru.alamat
+document.getElementById("notlpn").value = dataguru.notlpn
+document.getElementById("email").value = dataguru.email
+document.getElementById("pendidikan_terakhir").value = dataguru.pendidikan_terakhir
+
+// submit form
+const formubah = document.getElementById("formubah")
+
+formubah.addEventListener("submit", async function(e){
+
+e.preventDefault()
+
+await ubahdataguru(iddataguru)
+
+})
+
+</script>
 
 </body>
 </html>

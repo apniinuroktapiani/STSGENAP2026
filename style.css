@@ -1,44 +1,68 @@
-body{
-font-family: Arial;
-background:#f4f6ff;
-text-align:center;
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  padding: 20px;
 }
 
-h1{
-color:#333;
+.container {
+  max-width: 700px;
+  background: white;
+  padding: 20px;
+  margin: auto;
+  border-radius: 6px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-table{
-margin:auto;
-border-collapse:collapse;
-width:90%;
-background:white;
+h1 {
+  text-align: center;
 }
 
-th,td{
-padding:10px;
-border:1px solid #ddd;
+input, select, button, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 8px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
 }
 
-th{
-background:#AF4CAA;
-color:white;
+button {
+  cursor: pointer;
+  border: none;
+  background: #007bff;
+  color: white;
+  border-radius: 4px;
 }
 
-button{
-padding:8px 15px;
-border:none;
-background:#AF4C9A;
-color:white;
-cursor:pointer;
-border-radius:5px;
+button.delete {
+  background: #dc3545;
 }
 
-button:hover{
-background:#B74C9E;
+button.edit {
+  background: #ffc107;
+  color: black;
 }
 
-.tambah{
-margin:20px;
-background:blue;
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+th, td {
+  padding: 12px;
+  border: 1px solid #ddd;
+}
+
+a.button {
+  display: inline-block;
+  padding: 10px 15px;
+  background: #007bff;
+  color: white;
+  border-radius: 4px;
+  text-decoration: none;
+  margin-bottom: 15px;
+}
+
+a.button.secondary {
+  background: #6c757d;
 }

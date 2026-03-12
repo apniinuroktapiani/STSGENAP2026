@@ -2,45 +2,54 @@
 <html>
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>daftar</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Daftar Guru</title>
+
+<link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <div class="container">
-      <h1>Daftar Guru</h1>
-      
-      <a href="tambah.html" class="button">tambah guru</a>
-      
-      <table>
-           <thead>
-                <tr>
-                  <th>NIP</th>
-                  <th>Nama</th>
-                  <th>JK</th>
-                  <th>Tgl Lahir</th>
-                  <th>Mapel</th>
-                  <th>Alamat</th>
-                  <th>No tlpn</th>
-                  <th>Email</th>
-                  <th>Pendidikan</th>
-                  <th>Aksi</th>
-                </tr>
-           </thead>
-             <tbody id="tabelData"></tbody>
-      </table>
-  </div>
-  
-  <script type="module">
-      import{ tampilkanDaftarguru } from './main.js'
-      
-      //eksekusi fungsi untuk menampilkan daftar guru
-      tampilkanDaftarguru()
-  </script>
-  
-  
-      
-  
+
+<h1>Daftar Guru</h1>
+
+<a href="index.html">Beranda</a>
+
+<div class="container">
+
+<a href="tambah.html" class="button">Tambah Data</a>
+
+<table>
+
+<thead>
+<tr>
+<th>NIP</th>
+<th>Nama</th>
+<th>Jenis Kelamin</th>
+<th>Tanggal Lahir</th>
+<th>Mapel</th>
+<th>Alamat</th>
+<th>No Telepon</th>
+<th>Email</th>
+<th>Pendidikan Terakhir</th>
+<th>Aksi</th>
+</tr>
+</thead>
+
+<tbody id="tabeldata"></tbody>
+
+</table>
+
+</div>
+
+<script type="module">
+
+import { ambildataguru } from './main.js'
+
+// menampilkan data guru
+ambildataguru()
+
+</script>
+
 </body>
 </html>
